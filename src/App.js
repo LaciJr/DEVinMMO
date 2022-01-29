@@ -1,13 +1,13 @@
-import { Games } from './components/cards/gameCard';
-import { Pesquisa } from './components/header/header';
-import { GamesProvider } from './contexts/contextGames';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './routes/Router';
 
 function App() {
   return (
-    <GamesProvider>
-      <Pesquisa/>
-      <Games/>
-    </GamesProvider>
+    <>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </>
   );
 }
 
