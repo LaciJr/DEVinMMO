@@ -1,7 +1,7 @@
 import { useGames } from "../../contexts/contextGames";
 
 export const PesquisaGames = () => {
-    const { setPesquisa } = useGames;
+    const { setPesquisa } = useGames();
 
     return (
         <div>

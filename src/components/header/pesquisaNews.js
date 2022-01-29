@@ -1,7 +1,7 @@
 import { useNews } from "../../contexts/contextNews";
 
 export const PesquisaNews = () => {
-    const { setPesquisa } = useNews;
+    const { setPesquisa } = useNews();
 
     return (
         <div>
