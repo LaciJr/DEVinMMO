@@ -22,6 +22,7 @@ const NewsCard = ({news}) => {
                 <p>
                     {news.short_description}
                 </p>
+                <a href={news.article_url} target="_blank" rel="noopener noreferrer">VER NOTÍCIA</a>
             </section>
         </div>
         )

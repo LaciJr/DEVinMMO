@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useGames } from "../../contexts/contextGames"
 
 export const Games = () => {
@@ -12,6 +13,8 @@ export const Games = () => {
 }
 
 const GameCard = ({games}) => {
+    const navigate = useNavigate();
+    
     return (
     <div key={games.id}>
         <div>
@@ -24,6 +27,7 @@ const GameCard = ({games}) => {
                 {games.short_description}
             </p>
         </section>
+        <button onClick={() => navigate(`game/${games.id}`)}>VER DETALHES</button>
     </div>
     )
 }

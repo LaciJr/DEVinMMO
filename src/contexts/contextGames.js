@@ -12,8 +12,8 @@ export const GamesProvider = ({children}) => {
 
     useEffect(() => {
         (async () => {
-            const lista = await FetchGames('games');
-            games.current = lista;
+            const outraLista = await FetchGames('games'); 
+            games.current = outraLista;
             setGames(games.current);
         })();
     }, [])
