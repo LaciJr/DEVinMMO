@@ -1,7 +1,6 @@
-import { NewsProvider } from "../../contexts/contextNews"
-import { News } from "../cards/newsCard"
-import { NavBar } from "../header/navBar"
-import { PesquisaNews } from "../header/pesquisaNews"
+import { NewsProvider } from "../../contexts"
+import { News } from "../cards"
+import { NavBar, PesquisaNews  } from "../header"
 
 export const NewsPage = () => {
     return (

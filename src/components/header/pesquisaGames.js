@@ -1,4 +1,4 @@
-import { useGames } from "../../contexts/contextGames";
+import { useGames } from "../../contexts";
 
 export const PesquisaGames = () => {
     const { setPesquisa } = useGames();

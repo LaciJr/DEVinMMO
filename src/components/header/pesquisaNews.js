@@ -1,4 +1,4 @@
-import { useNews } from "../../contexts/contextNews";
+import { useNews } from "../../contexts";
 
 export const PesquisaNews = () => {
     const { setPesquisa } = useNews();
