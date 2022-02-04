@@ -1,2 +1,1 @@
-export * from "./contextGames"
-export * from "./contextNews"
+export * from "./context"

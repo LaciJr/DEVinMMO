@@ -1,13 +1,13 @@
-import { NewsProvider } from "../../contexts"
+import { GamesProvider } from "../../contexts"
 import { News } from "../cards"
-import { NavBar, PesquisaNews  } from "../header"
+import { NavBar, PesquisaGames } from "../header"
 
 export const NewsPage = () => {
     return (
-        <NewsProvider>
+        <GamesProvider url='latestnews'>
             <NavBar/>
-            <PesquisaNews/>
+            <PesquisaGames/>
             <News />
-        </NewsProvider>
+        </GamesProvider>
     )
 }

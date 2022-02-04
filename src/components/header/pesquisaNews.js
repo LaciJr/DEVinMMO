@@ -1,7 +1,7 @@
-import { useNews } from "../../contexts";
+import { useGames } from "../../contexts";
 
 export const PesquisaNews = () => {
-    const { setPesquisa } = useNews();
+    const { setPesquisa } = useGames();
 
     return (
         <div>

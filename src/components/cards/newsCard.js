@@ -1,11 +1,11 @@
-import { useNews } from "../../contexts"
+import { useGames } from "../../contexts"
 
 export const News = () => {
-    const { newsLista } = useNews();
+    const { gamesLista } = useGames();
 
     return (
         <main>
-            {newsLista.length === 0 ? 'Nenhuma notícia encontrada' : newsLista.map((news) => <NewsCard key={news.id} news={news}/>)
+            {gamesLista.length === 0 ? 'Nenhuma notícia encontrada' : gamesLista.map((news) => <NewsCard key={news.id} news={news}/>)
             }
         </main>
     )

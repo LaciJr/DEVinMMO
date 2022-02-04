@@ -1,11 +1,11 @@
-import { GamesProvider } from "../../contexts/contextGames"
-import { Games } from "../cards/gameCard"
-import { NavBar } from "../header/navBar"
-import { PesquisaGames } from "../header/pesquisaGames"
+import { GamesProvider } from "../../contexts"
+import { Games } from "../cards"
+import { NavBar, PesquisaGames } from "../header"
+
 
 export const GamesPage = () => {
     return (
-        <GamesProvider>
+        <GamesProvider url='games'>
             <NavBar/>
             <PesquisaGames/>
             <Games/>

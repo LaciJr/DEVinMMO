@@ -5,18 +5,18 @@ import { FetchGames } from "../services/fetchGames";
 const GamesContext = React.createContext();
 export const useGames = () => useContext(GamesContext);
 
-export const GamesProvider = ({children}) => {
+export const GamesProvider = ({children, url}) => {
     const [gamesLista, setGames] = useState([]);
     const games = useRef([]);
     const [pesquisa, setPesquisa] = useState('');
 
     useEffect(() => {
         (async () => {
-            const lista = await FetchGames('games'); 
+            const lista = await FetchGames(url); 
             games.current = lista;
             setGames(games.current);
         })();
-    }, [])
+    }, [url])
 
     useEffect(() => {
         setGames(filtrarPesquisa(games.current, pesquisa));
