@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useGames } from "../../contexts/contextGames"
+import { useGames } from "../../contexts"
 
 export const Games = () => {
     const { gamesLista } = useGames();
