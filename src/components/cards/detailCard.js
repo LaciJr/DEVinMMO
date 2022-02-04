@@ -13,13 +13,13 @@ export const DetailCard = () => {
         })();
     }, [id])
 
+
     return (
         <main>
             <h1>{game.title}</h1>
             <img src={game.thumbnail} alt={`${game.title} thumbnail`}></img>
             <div>
-            {/* {game.screenshots.length > 0 ? game.screenshots.map((game,i) => <img src={game.image} alt={`Screenshot ${i}`}/>) : null
-            } */
+            {game.screenshots ? game.screenshots.map((game,i) => <img src={game.image} alt={`Screenshot ${i}`}/>) : null
             }
             </div>
             <div>
@@ -30,21 +30,26 @@ export const DetailCard = () => {
                 <h3>Descrição</h3>
                 <p>{game.short_description}</p>
             </div>
-            <div>
-                Requisitos do sistema
-                <div>
-                    <span>
-                        <p><b>Sistema Operacional:</b></p>
-                        <p><b>Processador:</b></p>
-                        <p><b>Memory:</b></p>
-                        <p><b>Gráficos:</b></p>
-                        <p><b>Espaço em disco:</b></p>
-                    </span><span>
-                        {/* <p>{game.minimum_system_requirements.os}</p> */}
-                    </span>
-                </div>
-            </div>
+            {game?.minimum_system_requirements ? <Requirements list={game.minimum_system_requirements}/> : null}
         </main>
     )
+}
 
+const Requirements = ({list}) => {
+    return (
+        <div>
+            Requisitos do sistema
+            <div>
+                <span>
+                    <p><b>Sistema Operacional:</b></p>
+                    <p><b>Processador:</b></p>
+                    <p><b>Memory:</b></p>
+                    <p><b>Gráficos:</b></p>
+                    <p><b>Espaço em disco:</b></p>
+                </span><span>
+                    {Object.keys(list).map((e) => <p>{list[e]}</p>)}
+                </span>
+            </div>
+        </div>
+    )
 }
