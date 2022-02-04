@@ -19,7 +19,7 @@ export const DetailCard = () => {
             <h1>{game.title}</h1>
             <img src={game.thumbnail} alt={`${game.title} thumbnail`}></img>
             <div>
-            {game.screenshots ? game.screenshots.map((game,i) => <img src={game.image} alt={`Screenshot ${i}`}/>) : null
+            {game.screenshots ? game.screenshots.map((game,i) => <img key={i} src={game.image} alt={`Screenshot ${i}`}/>) : null
             }
             </div>
             <div>
@@ -47,7 +47,7 @@ const Requirements = ({list}) => {
                     <p><b>Gráficos:</b></p>
                     <p><b>Espaço em disco:</b></p>
                 </span><span>
-                    {Object.keys(list).map((e) => <p>{list[e]}</p>)}
+                    {Object.keys(list).map((e,i) => <p key={i}>{list[e]}</p>)}
                 </span>
             </div>
         </div>
