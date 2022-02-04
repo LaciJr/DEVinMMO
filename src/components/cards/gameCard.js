@@ -6,7 +6,7 @@ export const Games = () => {
 
     return (
         <main>
-            {gamesLista.length === 0 ? 'Nenhum jogo encontrado' : gamesLista.map((game) => <GameCard games={game}/>)
+            {gamesLista.length === 0 ? 'Nenhum jogo encontrado' : gamesLista.map((game) => <GameCard key={game.id} games={game}/>)
             }
         </main>
     )

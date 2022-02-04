@@ -12,8 +12,8 @@ export const NewsProvider = ({children}) => {
 
     useEffect(() => {
         (async () => {
-            const outraLista = await FetchGames('latestnews');
-            news.current = outraLista;
+            const lista = await FetchGames('latestnews');
+            news.current = lista;
             setNews(news.current);
         })();
     }, [])

@@ -5,7 +5,7 @@ export const News = () => {
 
     return (
         <main>
-            {newsLista.length === 0 ? 'Nenhuma notícia encontrada' : newsLista.map((news) => <NewsCard news={news}/>)
+            {newsLista.length === 0 ? 'Nenhuma notícia encontrada' : newsLista.map((news) => <NewsCard key={news.id} news={news}/>)
             }
         </main>
     )
