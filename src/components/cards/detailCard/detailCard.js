@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
-import { FetchGames } from "../../services/fetchGames";
+import { useNavigate, useParams } from "react-router-dom"
+import { Formulario } from "./form";
+import { FetchGames } from "../../../services/fetchGames";
 
 export const DetailCard = () => {
     const { id } = useParams();
     const [game, setGame] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -19,7 +21,7 @@ export const DetailCard = () => {
             <h1>{game.title}</h1>
             <img src={game.thumbnail} alt={`${game.title} thumbnail`}></img>
             <div>
-            {game.screenshots ? game.screenshots.map((game,i) => <img key={i} src={game.image} alt={`Screenshot ${i}`}/>) : null
+            {game.screenshots ? game.screenshots.map((element,i) => <img onClick={()=> navigate(`slideshow/${id}`)} key={i} src={element.image} alt={`Screenshot ${i}`}/>) : null
             }
             </div>
             <div>
@@ -31,6 +33,7 @@ export const DetailCard = () => {
                 <p>{game.short_description}</p>
             </div>
             {game?.minimum_system_requirements ? <Requirements list={game.minimum_system_requirements}/> : null}
+            <Formulario idGame={ id } />
         </main>
     )
 }

@@ -1,4 +1,4 @@
-import { DetailCard, Formulario } from "../cards"
+import { DetailCard } from "../cards/detailCard"
 import { NavBar } from "../header"
 
 export const DetailPage = () => {
@@ -6,7 +6,6 @@ export const DetailPage = () => {
         <>
         <NavBar/>
         <DetailCard/>
-        <Formulario />
         </>
     )
 }
