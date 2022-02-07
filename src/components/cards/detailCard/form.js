@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from 'yup'
 import { Comentario } from "./comment";
+import { DivBot, DivTop } from "./detail.styles";
 
 export const KEY_LOCALSTORAGE = 'COMMENTS';
 
@@ -57,28 +58,32 @@ export const Formulario = ({idGame}) => {
     }
 
     return (
-        <div>
+        <>
             <h3>Comentários</h3>
-
             <Formik initialValues={initValues} onSubmit={handleSubmit} validationSchema={validation} validateOnMount>
                 {({isSubmitting, isValid, resetForm})=> (
                     <Form>
+                        <DivTop>
                         <Field name="name" placeholder="Nome..."/>
                         <ErrorMessage name="name" style={{ color: 'red' }} component="span"/>
-
+                    
                         <Field name="email" placeholder="Email"/>
                         <ErrorMessage name="email" style={{ color: 'red' }} component="span"/>
 
+                        <button type="submit" disabled={isSubmitting || !isValid}>Publicar</button>
+                        </DivTop>
+
+                        <DivBot>
                         <Field name="comment" placeholder="Digite seu comentário..."/>
                         <ErrorMessage name="comment" style={{ color: 'red' }} component="span"/>
+                        </DivBot>
 
-                        <button type="submit" disabled={isSubmitting || !isValid}>Publicar</button>
                     </Form>
                 )}
             </Formik>
             <div>
                 {comment?.comments?.map((value) => (<Comentario key={value.id} value={value} idGame={idGame} comment={comment} />))}
             </div>
-        </div>
+        </>
     )
 }

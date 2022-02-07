@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Slide } from "react-slideshow-image";
+import { Fade } from "react-slideshow-image";
 import { FetchGames } from "../../services/fetchGames";
 import 'react-slideshow-image/dist/styles.css'
+import { myTheme } from "../../themes/themes";
 
 export const SlideShow = () => {
     const { id } = useParams();
@@ -19,16 +20,16 @@ export const SlideShow = () => {
 
     return (
         <div className="slide-container">
-            <button onClick={() => navigate(-1)}>Voltar</button>
-            <Slide>
+            <button style={{backgroundColor: myTheme.colors.primary.main}} onClick={() => navigate(-1)}>Voltar</button>
+            <Fade>
                 {image?.map((slideImages,i) => (
-                    <div className="each-slide" key={i}>
-                        <div style={{'backgroundImage': `url(${slideImages.image})`}}>
-                            <span>{slideImages.id}</span>
+                    <div className="each-fade" key={i}>
+                        <div className="image-container">
+                            <img src={slideImages.image} alt={slideImages.id}/>
                         </div>
                     </div>
                 ))}
-            </Slide>
+            </Fade>
         </div>
     )
 }

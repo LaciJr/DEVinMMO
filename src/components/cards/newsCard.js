@@ -1,4 +1,5 @@
 import { useGames } from "../../contexts"
+import { CardNews } from "./card.styles";
 
 export const News = () => {
     const { gamesLista } = useGames();
@@ -13,17 +14,18 @@ export const News = () => {
 
 const NewsCard = ({news}) => {
     return (
-        <div key={news.id}>
+        <CardNews key={news.id}>
             <div>
                 <img src={news.thumbnail} alt={news.title}></img>
             </div>
             <section>
-                <h1>{news.title}</h1>
+                <h3>{news.title}</h3>
+                <br/>
                 <p>
-                    {news.short_description}
+                    {news.short_description}...
                 </p>
-                <a href={news.article_url} target="_blank" rel="noopener noreferrer">VER NOTÍCIA</a>
+                <a href={news.article_url} target="_blank" rel="noopener noreferrer"><b>Ver notícia...</b></a>
             </section>
-        </div>
+        </CardNews>
         )
 }

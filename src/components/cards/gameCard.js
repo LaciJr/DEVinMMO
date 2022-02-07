@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useGames } from "../../contexts"
+import { Card, DivButton, DivImagem } from "./card.styles";
 
 export const Games = () => {
     const { gamesLista } = useGames();
@@ -16,18 +17,22 @@ const GameCard = ({games}) => {
     const navigate = useNavigate();
     
     return (
-    <div key={games.id}>
-        <div>
+    <Card  key={games.id}>
+        <DivImagem>
             <img src={games.thumbnail} alt={games.title}></img>
-        </div>
+        </DivImagem>
         <section>
             <h1>{games.title}</h1>
-            <span>{games.genre} | {games.platform}</span>
+            <div>
+                <span>{games.genre}</span><span>{games.platform}</span>
+            </div>
             <p>
                 {games.short_description}
             </p>
         </section>
+        <DivButton>
         <button onClick={() => navigate(`game/${games.id}`)}>VER DETALHES</button>
-    </div>
+        </DivButton>
+    </Card>
     )
 }
