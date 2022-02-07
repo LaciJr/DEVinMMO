@@ -40,7 +40,7 @@ export const Comentario = ({value, idGame, comment}) => {
             </div>
             <DivLikes>
                 <button onClick={() => dispatch({type: 'like'})}>▲</button>
-                {state.likes}
+                <p style={state.likes > 0 ? {color: 'green'} : state.likes < 0 ? {color: 'red'} : null}>{state.likes}</p>
                 <button onClick={() => dispatch({type: 'dislike'})}>▼</button>
             </DivLikes>
         </DivAllComments>
