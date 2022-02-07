@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { DivAllComments, DivLikes, DivReqAll } from "./detail.styles";
+import { DivAllComments, DivLikes } from "./detail.styles";
 import { KEY_LOCALSTORAGE } from "./form";
 
 export const Comentario = ({value, idGame, comment}) => {
