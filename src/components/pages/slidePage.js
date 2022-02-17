@@ -19,7 +19,7 @@ export const SlideShow = () => {
 
 
     return (
-        <div className="slide-container">
+        <div className="slide-container" style={{paddingTop: 60}}>
             <button style={{backgroundColor: myTheme.colors.primary.main}} onClick={() => navigate(-1)}>Voltar</button>
             <Fade>
                 {image?.map((slideImages,i) => (
