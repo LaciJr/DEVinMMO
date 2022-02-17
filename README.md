@@ -2,7 +2,7 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/LaciJr/DEVinMMO?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/LaciJr/DEVinMMO?style=for-the-badge)
-![GitHub stars](https://img.shields.io/bitbucket/issues/LaciJr/DEVinMMO?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/LaciJr/DEVinMMO?style=for-the-badge)
 
 > Trata-se de uma aplicação para consulta de jogos e notícias do mundo dos games utilizando a biblioteca React e os serviços de [MMO Games](https://rapidapi.com/digiwalls/api/mmo-games/), nessa aplicação foi feita uma listagem dos games utilizado o endpoint "https://mmo-games.p.rapidapi.com/games", outra página de listagem das notícias utilizando o endpoint "https://mmo-games.p.rapidapi.com/latestnews" e uma página de detalhes do jogo selecionado utilizando o endpoint "https://mmo-games.p.rapidapi.com/game".
 
