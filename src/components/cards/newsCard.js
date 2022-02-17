@@ -1,12 +1,12 @@
-import { useGames } from "../../contexts"
+import { useApi } from "../../contexts"
 import { CardNews } from "./card.styles";
 
 export const News = () => {
-    const { gamesLista } = useGames();
+    const { apiLista } = useApi();
 
     return (
         <main>
-            {gamesLista.length === 0 ? 'Nenhuma notícia encontrada' : gamesLista.map((news) => <NewsCard key={news.id} news={news}/>)
+            {apiLista.length === 0 ? 'Nenhuma notícia encontrada' : apiLista.map((news) => <NewsCard key={news.id} news={news}/>)
             }
         </main>
     )

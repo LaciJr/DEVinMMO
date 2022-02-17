@@ -1,8 +1,8 @@
-import { useGames } from "../../contexts";
+import { useApi } from "../../contexts";
 import { PesquisaInput } from "./header.styles";
 
 export const PesquisaGames = () => {
-    const { setPesquisa } = useGames();
+    const { setPesquisa } = useApi();
 
     return (
         <PesquisaInput type="text" onChange={(e) => {setPesquisa(e.target.value);}} placeholder="Pesquisar..."/>

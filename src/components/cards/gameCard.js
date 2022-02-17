@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { useGames } from "../../contexts"
+import { useApi } from "../../contexts"
 import { Card, DivButton, DivImagem } from "./card.styles";
 
 export const Games = () => {
-    const { gamesLista } = useGames();
+    const { apiLista } = useApi();
 
     return (
         <main>
-            {gamesLista.length === 0 ? 'Nenhum jogo encontrado' : gamesLista.map((game) => <GameCard key={game.id} games={game}/>)
+            {apiLista.length === 0 ? 'Nenhum jogo encontrado' : apiLista.map((game) => <GameCard key={game.id} games={game}/>)
             }
         </main>
     )

@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { filtrarPesquisa } from "../helper/helper";
 import { FetchGames } from "../services/fetchGames";
 
-const GamesContext = React.createContext();
-export const useGames = () => useContext(GamesContext);
+const apiContext = React.createContext();
+export const useApi = () => useContext(apiContext);
 
 export const GamesProvider = ({children, url}) => {
-    const [gamesLista, setGames] = useState([]);
+    const [apiLista, setLista] = useState([]);
     const games = useRef([]);
     const [pesquisa, setPesquisa] = useState('');
 
@@ -14,17 +14,17 @@ export const GamesProvider = ({children, url}) => {
         (async () => {
             const lista = await FetchGames(url); 
             games.current = lista;
-            setGames(games.current);
+            setLista(games.current);
         })();
     }, [url])
 
     useEffect(() => {
-        setGames(filtrarPesquisa(games.current, pesquisa));
+        setLista(filtrarPesquisa(games.current, pesquisa));
     }, [pesquisa])
 
     return (
-        <GamesContext.Provider value ={{gamesLista, games, pesquisa, setPesquisa}}>
+        <apiContext.Provider value ={{apiLista, games, pesquisa, setPesquisa}}>
             {children}
-        </GamesContext.Provider>
+        </apiContext.Provider>
     );
 }
