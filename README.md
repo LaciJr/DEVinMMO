@@ -8,11 +8,11 @@
 
 <img src="mmoracle-games.png" alt="games image">
 
-<img src="mmoracle-news.png" alt="games image">
+<img src="mmoracle-news.png" alt="news image">
 
-<img src="mmoracle-gamesdetail.png" alt="games image">
+<img src="mmoracle-gamedetail.png" alt="game detail image">
 
-<img src="mmoracle-comments.png" alt="games image">
+<img src="mmoracle-comments.png" alt="comments image">
 
 ### 🚧 Em construção...  🚧
 O projeto está em fase final de desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
