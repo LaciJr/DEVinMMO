@@ -14,7 +14,7 @@ export const DivAll = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 65%;
 `
 
 export const DivMain = styled.div`
@@ -61,6 +61,7 @@ export const DivSpan = styled.div`
     display: flex;
     font-size: 0.8rem;
     align-items: center;
+    margin-bottom: 10px;
 
     span {
         width: 200px;
